@@ -104,7 +104,13 @@ public class MainActivity extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edt1.setText(edt1.getText()+"");
+                String str=edt1.getText().toString();
+                if (str.length() >=1 ) {
+                    str = str.substring(0, str.length() - 1);
+                    edt1.setText(str);
+                } else if (str.length() <=1 ) {
+                    edt1.setText("");
+                }
             }
         });
 
